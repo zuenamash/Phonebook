@@ -1,11 +1,9 @@
-package zuu.com.phonebook
+package zuu.com.phonebook.Ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.widget.Toast
 import com.squareup.picasso.Picasso
-import zuu.com.phonebook.databinding.ActivityMainBinding
 import zuu.com.phonebook.databinding.ActivityNewContactBinding
 
 class NewContactActivity : AppCompatActivity() {

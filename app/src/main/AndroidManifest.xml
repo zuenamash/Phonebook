@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Phonebook">
         <activity
-            android:name=".NewContactActivity"
+            android:name=".Ui.NewContactActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

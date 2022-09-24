@@ -1,6 +1,4 @@
-package zuu.com.phonebook
-
-import java.net.Inet4Address
+package zuu.com.phonebook.Ui
 
 data class Contact(
     var name : String,

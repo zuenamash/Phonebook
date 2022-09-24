@@ -1,24 +1,19 @@
 package zuu.com.phonebook
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.TextureView
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.content.contentValuesOf
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
+import zuu.com.phonebook.Ui.Contact
+import zuu.com.phonebook.Ui.NewContactActivity
 import zuu.com.phonebook.databinding.ContactListItemBinding
-import kotlin.coroutines.coroutineContext
 
 class contact_rvAdapter(var contactList:List<Contact>):
 RecyclerView.Adapter<ContactsViewHolder>(){
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
 //      var itemView = LayoutInflater.from(parent.context)
 //          .inflate(R.layout.contact_list_item,parent,false)
@@ -46,7 +41,7 @@ RecyclerView.Adapter<ContactsViewHolder>(){
             Toast.makeText(context,"You have a clicked on ${currentContact.name}'s image", Toast.LENGTH_SHORT).show()
         }
         holder.binding.cvContact.setOnClickListener{
-            val intent = Intent(context,NewContactActivity::class.java)
+            val intent = Intent(context, NewContactActivity::class.java)
             intent.putExtra("NAME",currentContact.name)
             intent.putExtra("EMAIL",currentContact.email)
             intent.putExtra("PHONENUMBER",currentContact.phoneNumber)
