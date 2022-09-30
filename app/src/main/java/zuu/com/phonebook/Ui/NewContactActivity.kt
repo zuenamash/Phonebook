@@ -1,5 +1,6 @@
 package zuu.com.phonebook.Ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -13,16 +14,22 @@ class NewContactActivity : AppCompatActivity() {
         binding = ActivityNewContactBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getExtra()
+        getClicklisteners()
 
     }
-    fun getExtra() {
+
+        fun getClicklisteners() {
+            binding.btnBack.setOnClickListener {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+        }
+        fun getExtra() {
         val extras= intent.extras
         val name =extras?.getString("NAME","")
         val email = extras?.getString("EMAIL","")
-       val phoneNo =extras?.getString("PHONENUMBER","")
+        val phoneNo =extras?.getString("PHONENUMBER","")
         val address =extras?.getString("ADRESSNO","")
         val profile =binding.imgProfile
-
 
         Toast.makeText(this,"$name: $email",Toast.LENGTH_LONG).show()
 //        Toast.makeText(this,name,Toast.LENGTH_LONG).show()
@@ -32,8 +39,6 @@ class NewContactActivity : AppCompatActivity() {
         binding.tvJina.text=name
         binding.tvPhoneNo.text=phoneNo
         binding.tvadress.text=address
-
-
 
         Picasso.get().load(intent.getStringExtra("PROFILE")).into(profile)
     }
